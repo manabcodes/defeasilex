@@ -1,0 +1,23 @@
+Legal Assessment: CCTV Installation in a University Cafeteria — Scenario 2
+
+The Universidad Politécnica de Madrid (UPM) is considering installing
+CCTV cameras in the common cafeteria of one of its campuses. The
+cafeteria is used daily by students, academic staff, and administrative
+personnel. It is an enclosed indoor space accessible only to members of
+the university community during opening hours.
+
+UPM is a public university and therefore a public authority under
+Spanish law.
+
+UPM installs cameras covering entry and exit points and the service
+counter only, explicitly excluding seating areas. Prominent signage
+conforming to AEPD requirements is displayed at all entry points,
+identifying UPM as the data controller and providing contact details
+for the DPO. Footage is automatically deleted after 30 days. Access is
+restricted to designated security personnel under a documented access
+control policy. A data protection impact assessment has been completed
+and is on file. The lawful basis is legitimate interest under GDPR Art.
+6(1)(f), supported by a documented legitimate interest assessment
+concluding that security and property protection justify the processing
+and that the impact on data subjects is proportionate given the
+limited camera coverage and retention period.

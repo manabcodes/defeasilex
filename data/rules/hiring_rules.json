@@ -1,0 +1,122 @@
+{
+  "_provenance": "Extracted verbatim from the RULES list in references/fria_ddl_kg_demo.py (lines 321-394). This is the only DDLRule rule base that exists as running code in this repository. It covers the automated-hiring domain only; the admissions-screening rules shown in the paper's worked example (Section 4.1, r1/r2/r4/r5/r9) are not implemented as code anywhere in this repository.",
+  "rules": [
+    {
+      "id": "r1_privacy_prohibition",
+      "deontic": "prohibition",
+      "action": "process_sensitive_data",
+      "condition": null,
+      "priority": 5,
+      "defeats": [],
+      "defeated_by": ["r2_explicit_consent"],
+      "ctd_triggers": ["r3_notify_supervisory_authority"],
+      "legal_source": "EU Charter Art. 8; GDPR Art. 9; AI Act Art. 27(1)(b)",
+      "eu_right": "Art8",
+      "essence_boundary": false
+    },
+    {
+      "id": "r2_explicit_consent",
+      "deontic": "permission",
+      "action": "process_sensitive_data",
+      "condition": "explicit_consent",
+      "priority": 6,
+      "defeats": ["r1_privacy_prohibition"],
+      "defeated_by": ["r4_nondiscrimination_hiring"],
+      "ctd_triggers": [],
+      "legal_source": "GDPR Art. 9(2)(a); AI Act Recital 72",
+      "eu_right": "Art8",
+      "essence_boundary": false
+    },
+    {
+      "id": "r4_nondiscrimination_hiring",
+      "deontic": "prohibition",
+      "action": "use_proxy_attributes_for_protected_characteristics",
+      "condition": "automated_hiring_context",
+      "priority": 20,
+      "defeats": ["r2_explicit_consent"],
+      "defeated_by": [],
+      "ctd_triggers": ["r5_remediation_obligation"],
+      "legal_source": "EU Charter Art. 21; AI Act Art. 5(1)(c); Annex III §4",
+      "eu_right": "Art21",
+      "essence_boundary": true
+    },
+    {
+      "id": "r4b_bias_audit_obligation",
+      "deontic": "obligation",
+      "action": "conduct_bias_audit_before_deployment",
+      "condition": "automated_hiring_context",
+      "priority": 15,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": [],
+      "legal_source": "AI Act Art. 9(7); AI-HLEG Requirement 4 (Diversity)",
+      "eu_right": "Art21",
+      "essence_boundary": false
+    },
+    {
+      "id": "r6_transparency_obligation",
+      "deontic": "obligation",
+      "action": "provide_explanation_of_automated_decision",
+      "condition": "automated_decision_affecting_individual",
+      "priority": 10,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": ["r7_effective_remedy_ctd"],
+      "legal_source": "EU Charter Art. 41/47; AI Act Art. 13; AI-HLEG Req. 4",
+      "eu_right": "Art41",
+      "essence_boundary": false
+    },
+    {
+      "id": "r7_effective_remedy_ctd",
+      "deontic": "obligation",
+      "action": "enable_human_review_of_decision",
+      "condition": null,
+      "priority": 12,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": [],
+      "legal_source": "EU Charter Art. 47; AI Act Art. 14 (human oversight)",
+      "eu_right": "Art47",
+      "essence_boundary": false
+    },
+    {
+      "id": "r8_human_oversight",
+      "deontic": "obligation",
+      "action": "assign_human_oversight_officer",
+      "condition": "high_risk_ai_system",
+      "priority": 10,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": [],
+      "legal_source": "AI Act Art. 14; AI-HLEG Requirement 1 (Human Agency)",
+      "eu_right": "",
+      "essence_boundary": false
+    },
+    {
+      "id": "r3_notify_supervisory_authority",
+      "deontic": "obligation",
+      "action": "notify_supervisory_authority_within_72h",
+      "condition": null,
+      "priority": 10,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": [],
+      "legal_source": "GDPR Art. 33; AI Act Art. 73",
+      "eu_right": "",
+      "essence_boundary": false
+    },
+    {
+      "id": "r5_remediation_obligation",
+      "deontic": "obligation",
+      "action": "suspend_system_and_conduct_impact_review",
+      "condition": null,
+      "priority": 18,
+      "defeats": [],
+      "defeated_by": [],
+      "ctd_triggers": [],
+      "legal_source": "AI Act Art. 27(4); EU Charter Art. 47",
+      "eu_right": "",
+      "essence_boundary": false
+    }
+  ]
+}

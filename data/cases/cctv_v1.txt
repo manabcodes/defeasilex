@@ -1,0 +1,17 @@
+Legal Assessment: CCTV Installation in a University Cafeteria — Scenario 1
+
+The Universidad Politécnica de Madrid (UPM) is considering installing
+CCTV cameras in the common cafeteria of one of its campuses. The
+cafeteria is used daily by students, academic staff, and administrative
+personnel. It is an enclosed indoor space accessible only to members of
+the university community during opening hours.
+
+UPM is a public university and therefore a public authority under
+Spanish law.
+
+UPM installs cameras covering the full cafeteria floor area, including
+seating zones. No signage informing people that they are being recorded
+is displayed. Footage is stored on a university server with no defined
+retention period and is accessible to facilities management staff
+without access controls. No data protection impact assessment has been
+conducted. No notification has been made to the AEPD.

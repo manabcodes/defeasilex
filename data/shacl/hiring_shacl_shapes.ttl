@@ -1,0 +1,78 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eu-aiact: <https://w3id.org/dpv/legal/eu/aiact#> .
+@prefix dpv:     <https://w3id.org/dpv#> .
+@prefix fria:    <https://example.org/fria/hiring#> .
+
+# Every high-risk AI system in the employment sector MUST declare
+# all five compliance facts before a FRIA can proceed.
+#
+# Extracted verbatim from SHACL_SHAPES_TTL in
+# references/fria_ddl_kg_demo.py (lines 59-133). This is the only
+# SHACL shape that exists as running code in this repository — it
+# validates the automated-hiring domain only.
+
+fria:HiringSystemShape
+    a sh:NodeShape ;
+    sh:targetClass eu-aiact:HighRiskAISystem ;
+    sh:name "FRIA Completeness Check (AI Act Art. 27)" ;
+
+    # 1. Has the deployer obtained explicit consent for sensitive data?
+    sh:property [
+        sh:path fria:explicit_consent ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "explicit_consent" ;
+        sh:message "Missing: explicit_consent — required by GDPR Art. 9 / AI Act Art. 27(1)(b)."
+    ] ;
+
+    # 2. Does the system use proxy attributes for protected characteristics?
+    sh:property [
+        sh:path fria:uses_proxy_attributes ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "uses_proxy_attributes" ;
+        sh:message "Missing: uses_proxy_attributes — required to assess Art. 21 non-discrimination risk."
+    ] ;
+
+    # 3. Has a bias audit been conducted before deployment?
+    sh:property [
+        sh:path fria:bias_audit_done ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "bias_audit_done" ;
+        sh:message "Missing: bias_audit_done — required by AI Act Art. 9(7)."
+    ] ;
+
+    # 4. Does the system provide explanations for automated decisions?
+    sh:property [
+        sh:path fria:explanation_provided ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "explanation_provided" ;
+        sh:message "Missing: explanation_provided — required by AI Act Art. 13 / EU Charter Art. 41."
+    ] ;
+
+    # 5. Has a human oversight officer been assigned?
+    sh:property [
+        sh:path fria:human_oversight_assigned ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "human_oversight_assigned" ;
+        sh:message "Missing: human_oversight_assigned — required by AI Act Art. 14."
+    ] ;
+
+    # 6. At least one fundamental right must be declared at risk.
+    sh:property [
+        sh:path dpv:hasRight ;
+        sh:minCount 1 ;
+        sh:name "impacted_rights" ;
+        sh:message "Missing: at least one impacted right must be declared (EU Charter / AI Act Art. 27)."
+    ] .

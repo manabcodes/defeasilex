@@ -1,0 +1,17 @@
+Compliance Assessment: Automated Credit Scoring — Version 3 (incomplete submission)
+
+A bank has deployed an AI system that automatically scores consumer
+creditworthiness and decides whether to approve or reject loan
+applications. The system processes applicants' financial history and
+employment data. It is used directly in lending decisions with no
+mandatory human review step.
+
+This system falls under EU AI Act Annex III §5(b) as a high-risk AI
+system. The bank must conduct a Fundamental Rights Impact Assessment
+under AI Act Article 27.
+
+The compliance team submitted a partial assessment. They confirmed
+consent was obtained, that no proxy attributes are used, and that a
+bias audit was completed. Whether the system provides explanations to
+applicants was not documented. Whether a human oversight officer has
+been assigned was not documented.

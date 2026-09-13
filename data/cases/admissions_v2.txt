@@ -1,0 +1,21 @@
+Compliance Assessment: Automated University Admissions Screening — Version 2
+
+A university has deployed an AI system that scores applicants to
+undergraduate programmes and filters who proceeds to human review by
+admissions tutors. The system processes academic records, predicted
+grades, and personal statement text. Applicants who score below a
+threshold are rejected automatically without human review. The
+university is the deployer under AI Act Article 27.
+
+This system falls under EU AI Act Annex III §3(a) as a high-risk AI
+system used to determine access to educational institutions.
+
+Postcode and school type features have been removed. The system uses
+academic indicators and personal statement text only. Applicants who
+are automatically rejected receive a written explanation citing the
+principal factors. A human admissions officer reviews all automatic
+rejections before they are communicated to applicants. Consent
+obtained. Bias audit completed. A documented minor-data handling
+protocol is in place specifying that applicants under 18 are subject
+to enhanced data minimisation and that their data is not retained
+beyond the admissions cycle.
